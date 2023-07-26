@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <style>
+      #getDateTime {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/update-blog/<%= result._id %>?_method=PUT" method="post">
+      <p>
+        <input type="text" placeholder="Enter the url of your Image" value="<%= result.blogImage %>" name="blogImage" id="blogImage">
+      </p>
+      <p>
+        <input type="text" placeholder="Enter the blog title" name="blogTitle" value="<%= result.blogTitle %>" id="blogTitle" />
+      </p>
+      <p>
+        <input type="text" name="blogAuthor" placeholder="Enter the blog Author" value="<%= result.blogAuthor %>" id="blogAuthor" />
+      </p>
+      <p id="getDateTime"></p>
+      <p>
+        <textarea name="blogBody" id="blogBody" placeholder="Enter the blog body" cols="30" rows="10"><%= result.blogBody %></textarea>
+      </p>
+      <p>
+        <input type="submit" value="Update Blog">
+      </p>
+    </form>
+
+    <script>
+      let getDateTime = document.getElementById("getDateTime");
+      const currentTimeDate = new Date();
+
+      const year = currentTimeDate.getFullYear();
+      const month = currentTimeDate.getMonth() + 1;
+      const day = currentTimeDate.getDate()
+      const hours = currentTimeDate.getHours()
+      const minutes = currentTimeDate.getMinutes()
+      const seconds = currentTimeDate.getSeconds()
+
+      getDateTime.innerText = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+    </script>
+  </body>
+</html>

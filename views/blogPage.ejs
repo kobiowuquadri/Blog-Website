@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">Bloggers</a>
+        <nav>
+           <ul>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
+           </ul>
+        </nav>
+    </header>
+
+
+    <div class="blog_container">
+        <% results.forEach(blog => { %>
+            <a href="/single-blog/<%=blog._id%>"
+                >
+            <div class="blog">
+                <div class="blog_image">
+                    <img src="<%= blog.blogImage %>" alt="">
+                </div>
+                <div class="blog_texts">
+                    <h1 id="blogTitle"><%= blog.blogTitle %></h1>
+                    <p id="blogAuthor"><%= blog.blogAuthor %></p>
+                    <p id="blogBody"><%= blog.blogBody %></p>
+                </div>
+            </div>
+            </a>
+        <%})%>
+    </div>
+</body>
+</html>

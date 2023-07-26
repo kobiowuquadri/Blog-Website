@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="blog_image">
+                <img src="<%= result.blogImage %>" alt="">
+            </div>
+            <div class="blog_texts">
+                <h1 id="blogTitle"><%= result.blogTitle %></h1>
+                <p id="blogAuthor"><%= result.blogAuthor %></p>
+                <p id="blogBody"><%= result.blogBody %></p>
+            </div>
+            <a href="/blog-update/<%= result._id %>">Update</a>
+            <a id="delete" href="" data-delete="<%= result._id%>">Delete</a>
+        </div>
+
+        <script>
+            let deleteBtns = document.querySelector('#delete')
+deleteBtns.addEventListener('click', event => {
+    const url = `/delete-blog/${deleteBtns.dataset.delete}`
+    fetch(url, { method: 'DELETE' })
+      .then(response => response.json())
+      .then(data => {
+        window.location.href = data.redirect
+      })
+  })
+
+
+        </script>
+</body>
+</html>
