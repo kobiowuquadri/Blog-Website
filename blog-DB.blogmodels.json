@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "64baa44056a0d795ec89498f"
+  },
+  "blogImage": "https://www.digitalocean.com/_next/static/media/intro-to-cloud.d49bc5f7.jpeg",
+  "blogTitle": "CSS MEDIA QUERY",
+  "blogAuthor": "Quadri Kobiowu",
+  "blogBody": "Media queries give us a very powerful way to adjust our styles according to factors like the type of device used, the viewport size, the screen’s pixel density, or even the device orientation. As media queries have been around for quite a while, you may already be familiar with the basic syntax and usage. This post therefore aims to be a good quick reference point, and hopefully you’ll also discover a few tricks you didn’t know were possible.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64baf3ff8a58fe97716433b3"
+  },
+  "blogImage": "https://media.istockphoto.com/id/1157789866/photo/modern-computer-laptop-with-blank-screen-on-counter-barand-window-view.jpg?s=612x612&w=0&k=20&c=Idggc96ENAdz7R_ANTzvWpMTbaUcTV4JvJYKJHAD71A=",
+  "blogTitle": "Cohort 2",
+  "blogAuthor": "Faculty Quadri",
+  "blogBody": "Happy Coding\r\nIn the early 2000's, developers focused on making sure their websites looked good on larger screen sizes like laptops and desktop computers. In today's world, you have to consider devices like mobile phones, tablets, and even watches.\r\n\r\n",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bb151f225ac9ee02e02116"
+  },
+  "blogImage": "https://media.istockphoto.com/id/1165369961/photo/laptop.jpg?s=612x612&w=0&k=20&c=0V8ThUvkAN3zNZFwT_9HRCUS73fB1Av7BhZa4pEUPrI=",
+  "blogTitle": "Multer",
+  "blogAuthor": "multer john",
+  "blogBody": "Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.\r\n\r\nNOTE: Multer will not process any form which is not multipart (multipart/form-data).",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bb1bcce9cc69955a3086f3"
+  },
+  "blogImage": "https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1280.jpg",
+  "blogTitle": "Learning to Code",
+  "blogAuthor": "Quadri Kobiowu",
+  "blogBody": "Coding is one of the most valuable skills you can build. If you’re searching for \"how to learn to code,\" it might be because you want to advance your career.\r\n\r\nMaybe you’re hoping to build software or games for your friends or get a better grip on the tech space. Either way, learning the language of computers can be a major asset to your professional and personal development.\r\n\r\n",
+  "__v": 0
+}]

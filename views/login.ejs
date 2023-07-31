@@ -21,15 +21,47 @@
             <p>
                 <input type="email" placeholder="example@gmail.com" name="email" id="email">
             </p>
+            <div style="font-size: 14px; color: red; font-family: cursive;" class="emailError"></div>
             <p>
                 <input type="password" placeholder="Enter your password" name="password" id="password">
             </p>
+            <div style="font-size: 14px; color: red; font-family: cursive;" class="passwordError"></div>
             <p>
                 <input type="submit" value="Login">
             </p>
         </form>
     </div>
 
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', async (e)=> {
+            e.preventDefault()
+            const email = form.email.value
+            const password = form.password.value
+            const emailError = document.querySelector('.emailError')
+            const passwordError = document.querySelector('.passwordError')
+
+            await fetch('/login', {
+                method: "POST",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email, password})
+            })
+            .then(response => {
+                response.json()
+                .then(data => {
+                    if(data.user){
+                        location.assign('/')
+                    }
+                    if(data.error){
+                        emailError.textContent = data.error.email
+                        passwordError.textContent = data.error.password
+                    }
+                })
+            })
+        })
+    </script>
 
 </body>
 </html>

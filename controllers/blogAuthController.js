@@ -3,6 +3,20 @@ const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
+const handleErrors = (err) => {
+   let errors = {email:"", password: ""}
+   if(err.message === "incorrect password"){
+    errors.password = "Kindly enter a correct password"
+    return errors
+   }
+   if(err.message === "incorrect email"){
+    errors.email = "Invalid email address"
+    return errors
+   }
+   return errors
+}
+
+
 const postSignUpPage = async (req, res) => {
     try{
        const {email, password} = req.body
@@ -31,7 +45,7 @@ const postLoginPage = async (req, res) => {
       if(user){
          const isPassword = await bcrypt.compareSync(password, user.password)
          if(isPassword){
-            jwt.sign({id: user._id}, process.env.JWT_SECRET, {}, (err, token)=> {
+           await jwt.sign({id: user._id}, process.env.JWT_SECRET, {}, (err, token)=> {
               if(err){
                   console.log(err)
                   res.redirect('/')
@@ -39,21 +53,23 @@ const postLoginPage = async (req, res) => {
                else {
                   console.log(token)
                   res.cookie("token", token)
-                  res.status(200).redirect('/createBlog')
+                  res.status(200).json({user})
                }
             })
 
          }
          else{
-            throw Error('Your password is incorrect')
+            throw Error('incorrect password')
          }
       }
       else{ 
-          throw Error('User with this email does not exist')
+          throw Error('incorrect email')
       }
     }
     catch(err){
-      console.error(err)
+      console.log(err)
+      const errors = handleErrors(err)
+      res.status(400).json({error: errors})
     }
 }
 
