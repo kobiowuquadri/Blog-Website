@@ -2,13 +2,13 @@ const blogModel = require('../models/blogSchema')
 
 
 const getBlogPage = async (req, res) => {
+    const token = req.cookies.token
+    let status = false
+    if(token){
+        status = true
+    }
     await blogModel.find()
     .then(results => {
-        const token = req.cookies.token
-        let status = false
-        if(token){
-            status = true
-        }
        res.render('blogPage', {title: 'Blog Page', results, status})
     })
     .catch(error => console.log(error.message))
