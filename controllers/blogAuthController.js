@@ -73,5 +73,10 @@ const postLoginPage = async (req, res) => {
     }
 }
 
+const logout = async (req, res) => {
+   res.cookie("login"), "", {maxAge: 0}
+   res.redirect('/login')
+}
 
-module.exports = {postSignUpPage, postLoginPage}
+
+module.exports = {postSignUpPage, postLoginPage, logout}
