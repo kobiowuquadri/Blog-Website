@@ -34,7 +34,7 @@ nav ul {
 
 .blog_container {
 
-    padding: 50px;
+    padding: 100px 50px 0px 50px;
     /* display: flex; */
     /* gap: 50px; */
 }
@@ -123,4 +123,27 @@ input[type="submit"]{
 
 .footer p {
     font-size: 1.2rem;
+}
+
+@media (max-width:768px){
+    .blog_container {
+        padding: 100px 10px 0px 10px;
+    }
+    .blog {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+      }
+    
+      .blog_texts {
+        width: 100%;
+      }
+    
+      .blog_image {
+        width: 100%;
+      }
+    
+      .blog_image img {
+        object-fit: contain;
+      }
 }
