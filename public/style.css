@@ -112,6 +112,9 @@ input[type="submit"]{
 }
 
 .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     background-color: white;
     padding: 30px;
     box-shadow: 2px 2px 10px blue;
