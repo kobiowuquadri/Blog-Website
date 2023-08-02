@@ -18,7 +18,14 @@ const getBlogPage = (req, res) => {
   }
 
 const getCreateBlogPage = (req, res) => {
-    res.render('createBlog', {title: 'Create Blog'})
+    const userToken = req.cookies.token
+    console.log(userToken)
+    let status = false
+    if(userToken){
+       status = true
+    }
+    console.log(status)
+    res.render('createBlog', {title: 'Create Blog', status})
 }
 
 
@@ -38,31 +45,59 @@ const postCreateBlogPage = (req, res) => {
 
 
 const getSignUpPage = (req, res) => {
-    res.render('signup', {title: "SignUp Page"})
+    const userToken = req.cookies.token
+    console.log(userToken)
+    let status = false
+    if(userToken){
+       status = true
+    }
+    console.log(status)
+    res.render('signup', {title: "SignUp Page", status})
 }
 
 const getLoginPage = (req, res) => {
-    res.render('login', {title: 'Login Page'})
+    const userToken = req.cookies.token
+    console.log(userToken)
+    let status = false
+    if(userToken){
+       status = true
+    }
+    console.log(status)
+    res.render('login', {title: 'Login Page', status})
 }
 
 
 
 
 const getSingleBlog = async (req, res) => {
+    const userToken = req.cookies.token
+    console.log(userToken)
+    let status = false
+    if(userToken){
+       status = true
+    }
+    console.log(status)
     const id = req.params.id
     await blogModel.findById(id)
     .then(result => {
-        res.render('singleview', {title: 'Single View Blog', result})
+        res.render('singleview', {title: 'Single View Blog', result, status})
     })
     .catch(error => console.log(error))
 }
 
 
 const getUpdateBlogForm = async (req, res)=> {
+    const userToken = req.cookies.token
+    console.log(userToken)
+    let status = false
+    if(userToken){
+       status = true
+    }
+    console.log(status)
     const id = req.params.id
     await blogModel.findById(id)
     .then(result => {
-        res.render('blogUpdate', {title: 'Update Blog Page', result})
+        res.render('blogUpdate', {title: 'Update Blog Page', result, status})
     })
     .catch(error => console.log(error))
 }

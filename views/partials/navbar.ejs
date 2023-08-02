@@ -1,10 +1,16 @@
 <header>
     <a href="/" id="logo">Bloggers</a>
     <nav>
+     
        <ul>
-          <li><a href="/logout">LogOut</a></li>
-          <li><a href="/signup">Sign Up</a></li>
-          <li><a href="/login">Login</a></li>
+         <%if(status){%>
+            <li><a href="/logout">LogOut</a></li>
+         <%}else{%>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
+         <%}%>
+          
+         
        </ul>
     </nav>
 </header>

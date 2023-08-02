@@ -74,7 +74,7 @@ const postLoginPage = async (req, res) => {
 }
 
 const logout = async (req, res) => {
-   res.cookie("token"), "", {maxAge: 0}
+   res.cookie("token", "", {maxAge: 0})
    res.redirect('/login')
 }
 
