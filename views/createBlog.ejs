@@ -12,15 +12,7 @@
     </style>
   </head>
   <body>
-    <header>
-      <a href="/" id="logo">Bloggers</a>
-      <nav>
-         <ul>
-          <li><a href="/signup">Sign Up</a></li>
-          <li><a href="/login">Login</a></li>
-         </ul>
-      </nav>
-  </header>
+    <%- include('partials/navbar.ejs') %>
     <div class="form_container">
       <form action="/blogSubmission" method="post">
         <p>
@@ -41,7 +33,7 @@
         </p>
       </form>
     </div>
-
+<%- include('partials/footer.ejs') %>
     <script>
       let getDateTime = document.getElementById("getDateTime");
       const currentTimeDate = new Date();

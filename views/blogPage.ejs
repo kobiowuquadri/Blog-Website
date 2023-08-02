@@ -7,21 +7,9 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <a href="/" id="logo">Bloggers</a>
-        <nav>
-           <ul>
-            <% if(status){ %>
-                <li><a href="/logout">LogOut</a></li>
-           <% }else { %>
-                <li><a href="/signup">Sign Up</a></li>
-                <li><a href="/login">Login</a></li>
-           <% }%>
-           </ul>
-        </nav>
-    </header>
 
-
+    <%- include('partials/navbar.ejs') %>
+   
     <div class="blog_container">
         <% results.forEach(blog => { %>
             <a href="/single-blog/<%=blog._id%>"
@@ -39,5 +27,6 @@
             </a>
         <%})%>
     </div>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>

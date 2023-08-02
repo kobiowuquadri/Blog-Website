@@ -7,16 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="/" id="logo">Bloggers</a>
-        <nav>
-           <ul>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login">Login</a></li>
-           </ul>
-        </nav>
-    </header>
-
+    <%- include('partials/navbar.ejs') %>
     <div class="form_container">
         <form action="/signup" method="post">
             <p>
@@ -30,6 +21,6 @@
             </p>
         </form>
     </div>
-
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>

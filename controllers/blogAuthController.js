@@ -48,7 +48,7 @@ const postLoginPage = async (req, res) => {
            await jwt.sign({id: user._id}, process.env.JWT_SECRET, {}, (err, token)=> {
               if(err){
                   console.log(err)
-                  res.redirect('/')
+                  res.redirect('/createBlog')
               }
                else {
                   console.log(token)
@@ -74,7 +74,7 @@ const postLoginPage = async (req, res) => {
 }
 
 const logout = async (req, res) => {
-   res.cookie("login"), "", {maxAge: 0}
+   res.cookie("token"), "", {maxAge: 0}
    res.redirect('/login')
 }
 
