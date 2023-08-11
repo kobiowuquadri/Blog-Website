@@ -14,9 +14,9 @@
   <body>
     <%- include('partials/navbar.ejs') %>
     <div class="form_container">
-      <form action="/blogSubmission" method="post">
+      <form action="/blogSubmission" method="post" enctype="multipart/form-data">
         <p>
-          <input type="text" placeholder="Enter the url of your Image" name="blogImage" id="blogImage">
+          <input type="file"  name="blogImage" multiple id="blogImage">
         </p>
         <p>
           <input type="text" placeholder="Enter the blog title" name="blogTitle" id="blogTitle" />

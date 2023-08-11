@@ -7,9 +7,11 @@ require('./database/database')
 const router = require('./routes/blogRoute')
 const authRouter = require('./routes/authRoute')
 const cookieParser = require('cookie-parser')
-// const expressLayouts = require('express-ejs-layouts')
-const port = 3055
 
+const port = 3033
+
+
+app.listen(port, () => console.log(`Server Connected at Port ${port}`))
 
 // Middlewares
 app.set('view engine', 'ejs')
@@ -30,5 +32,3 @@ app.all('*', (req, res) => {
     res.send('ERROR 404, PAGE NOT FOUND!!! 😑😑😑')
 })
 
-
-app.listen(port, () => console.log(`Server Connected at Port ${port}`))

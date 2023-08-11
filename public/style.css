@@ -5,33 +5,93 @@
     list-style-type: none;
     text-decoration: none;
     font-family: sans-serif;
-    color: black;
+    
 }
 
-header{
-    background-color: white;
+:root{
+    --black_color:black;
+    --white_color:#ffff;
+}
+
+.header{
+    background-color:var(--white_color);
     padding: 15px 50px;
-    box-shadow: 2px 2px 10px blue;
-    color: blue;
+    color: var(--black_color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
 }
 
+.header a {
+    color: var(--dark_color);
+}
 
 #logo{
-    color: blue;
+    color: var(--black_color);
     font-size: 2rem;
     font-weight: bold;
 }
 
-nav ul {
+.navbar ul {
     display: flex;
-    gap: 70px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
+.navbar ul a {
+    color: var(--black_color);
+    font-size: 1.2rem;
+}
+
+.navbar ul button a {
+    color: var(--white_color);
+}
+
+.navbar ul li button {
+    border: none;
+    background-color: var(--black_color);
+    color: var(--white_color);
+    padding: 8px 15px;
+    color: var(--white_color);
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.bg_image {
+  background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('/img/bg.jpeg'), no-repeat center;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: var(--white_color);
+}
+
+.bg_image h1 {
+    font-size: 3rem;
+}
+
+.bg_image p {
+    font-size: 1.5rem;
+}
+
+.bg_image button {
+    border: none;
+    background-color: var(--black_color);
+    color: var(--white_color);
+    padding: 10px 20px;
+    color: var(--white_color);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/* 
 .blog_container {
 
     padding: 100px 50px 50px 50px;
@@ -67,42 +127,50 @@ nav ul {
   justify-content: center;
 }
 
-
-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 2px 2px 12px blue;
-    height: auto;
-    width: 500px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-input{
-    padding: 5px;
-    font-size: 1.5rem;
-}
-
-input[type="submit"]{
-   background-color: blue;
-   color: white;
-   border: none;
-   font-size: 1.2rem;
-   padding: 10px;
-   border-radius: 10px;
-}
-
 .form_container {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    align-items: center;
+    padding: 170px 100px 100px 100px;
 }
+
+form {
+    background-color: var(--light_blue);
+    box-shadow: 2px 2px 12px var(--light_red);
+    height: auto;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+input[type="submit"]{
+   background-color: var(--light_purple);
+   color: white;
+   border: none;
+   width: 100%;
+   font-size: 1.3rem;
+   border-radius: 10px;
+}
+
 
 #blogBody {
     width: 100%;
@@ -110,13 +178,10 @@ input[type="submit"]{
 }
 
 .footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    background-color: white;
+    background-color: var(--light_blue);
     padding: 30px;
-    box-shadow: 2px 2px 10px blue;
-    color: blue;
+    box-shadow: 2px 2px 10px var(--light_purple);
+    color:var(--white_color);
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -147,4 +212,4 @@ input[type="submit"]{
       .blog_image img {
         object-fit: contain;
       }
-}
+} */

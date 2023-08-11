@@ -1,4 +1,10 @@
+
+
 const blogModel = require('../models/blogSchema')
+// const { storage } = require("../storage/storage")
+// const multer = require('multer')
+// const upload = multer({storage})
+
 
 const getBlogPage = (req, res) => {
     const userToken = req.cookies.token
@@ -17,6 +23,8 @@ const getBlogPage = (req, res) => {
     .catch(error => console.log(error.message))
   }
 
+  
+
 const getCreateBlogPage = (req, res) => {
     const userToken = req.cookies.token
     console.log(userToken)
@@ -31,9 +39,11 @@ const getCreateBlogPage = (req, res) => {
 
 const postCreateBlogPage = (req, res) => {
     try{
-     const {blogImage, blogTitle, blogAuthor, blogBody } = req.body
+        const blogImage  = req.file
+        console.log(req.file)
+     const { blogTitle, blogAuthor, blogBody } = req.body
      console.log(blogImage)
-         const newBlog = new blogModel({blogImage, blogTitle, blogAuthor, blogBody})
+         const newBlog = new blogModel({blogImage: blogImage.path, blogTitle, blogAuthor, blogBody})
          newBlog.save()
          .then(()=>res.redirect('/'))
          .catch(err => console.log(err))

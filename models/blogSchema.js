@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 // schema 
 const blogSchema = new mongoose.Schema({
     blogImage: {
-        type:String,
+        type: String,
         required: true
     },
     blogTitle: {

@@ -1,13 +1,16 @@
-<header>
+<header class="header">
     <a href="/" id="logo">Bloggers</a>
-    <nav>
+    <nav class="navbar">
      
        <ul>
+         <li><a href="#">Home</a></li>
+         <li><a href="#">Blogs</a></li>
+         <li><a href="#">Contact</a></li>
          <%if(status){%>
-            <li><a href="/logout">LogOut</a></li>
+            <li><button><a href="/logout">LogOut</a></button></li>
          <%}else{%>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><button><a href="/signup">Sign Up</a></button></li>
+            <li><button><a href="/login">Login</a></button></li>
          <%}%>
           
          
