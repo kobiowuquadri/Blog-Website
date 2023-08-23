@@ -41,7 +41,7 @@
 
 .navbar ul a {
     color: var(--black_color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .navbar ul button a {
@@ -55,7 +55,7 @@
     padding: 8px 15px;
     color: var(--white_color);
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: .7rem;
     cursor: pointer;
 }
 
@@ -89,6 +89,47 @@
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+.form_container {
+    background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(./img/bg.jpeg) center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.form_container form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 500px;
+    background-color: var(--white_color);
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+[type="email"], [type="password"]{
+   border: 1px solid black;
+   width: 100%; padding: 5px;
+   border-radius: 10px;
+   font-size: 1.2rem;
+}
+
+[type="submit"]{
+    background-color: var(--black_color);
+    width: 100%;
+    color: var(--white_color);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+
 
 
 /* 
